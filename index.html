@@ -1,34 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+    integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+
+  <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
+
+  <script defer src="./script.js"></script>
+
 </head>
+
 <body>
+  <header>
+    <h1>IP Address Tracker</h1>
+    <form onsubmit="searchIp(event)">
+      <input type="text" placeholder="Search for any IP address or domain" id="ipInput" value="">
+      <input type="submit">
+    </form>
+    <div class="results-container">
+      <div class="result-tile">
+        <span class="result-header">IP Address</span>
+        <span class="result-text" id="result-ip"></span>
+      </div>
+      <div class="result-tile">
+        <span class="result-header">Location</span>
+        <span class="result-text" id="result-location"></span>
+      </div>
+      <div class="result-tile">
+        <span class="result-header">Timezone</span>
+        <span class="result-text"><span id="timezone-prefix"></span><span id="result-timezone"></span></span>
+      </div>
+      <div class="result-tile">
+        <span class="result-header">ISP</span>
+        <span class="result-text" id="result-isp"></span>
+      </div>
+    </div>
+  </header>
 
-  IP Address Tracker
+  <main>
+    <div id="map"></div>
+  </main>
 
-  Search for any IP address or domain
-
-  IP Address
-  Location
-  Timezone
-    UTC <!-- add offset value dynamically using the API -->
-  ISP
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="https://github.com/jedrekjs" target="_blank">jedrekjs</a>.
+  </footer>
 </body>
+
 </html>

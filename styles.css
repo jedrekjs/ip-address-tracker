@@ -1,0 +1,23 @@
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body{
+    margin: 0;
+}
+
+h1{
+    margin: 0;
+}
+
+header{
+    height: 30vh;
+}
+
+main{
+    height: 68vh;
+}
+
+footer{
+    height: 2vh;
+}
+
+#map { height: 100% }
