@@ -25,21 +25,27 @@
 <body>
   <header>
     <h1>IP Address Tracker</h1>
-    <form onsubmit="searchIp(event)">
-      <input type="text" placeholder="Search for any IP address or domain" id="ipInput" value="">
-      <input type="submit">
-    </form>
-    <div class="results-container">
+    <div class="form">
+      <div>
+        <input type="text" placeholder="Search for any IP address or domain" class="textarea" id="ipInput" value="">
+      </div>
+      <div id="button" onclick="searchIp()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
+          <path fill="none" stroke="#FFF" stroke-width="3" d="M2 1l6 6-6 6" />
+        </svg> 
+      </div>
+    </div>
+    <div id="results-container">
       <div class="result-tile">
-        <span class="result-header">IP Address</span>
+        <span class="result-header">IP ADDRESS</span>
         <span class="result-text" id="result-ip"></span>
       </div>
       <div class="result-tile">
-        <span class="result-header">Location</span>
+        <span class="result-header">LOCATION</span>
         <span class="result-text" id="result-location"></span>
       </div>
       <div class="result-tile">
-        <span class="result-header">Timezone</span>
+        <span class="result-header">TIMEZONE</span>
         <span class="result-text"><span id="timezone-prefix"></span><span id="result-timezone"></span></span>
       </div>
       <div class="result-tile">

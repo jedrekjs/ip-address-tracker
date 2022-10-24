@@ -14,13 +14,7 @@ const markerIcon = L.icon({
 
 var marker;
 
-var map = L.map('map',
-    {
-        zoomControl: true,
-        scrollWheelZoom: true,
-        dragging: true,
-        tap: true
-    }).setView([0, 0], 3);
+var map = L.map('map', { zoomControl: false }).setView([0, 0], 3);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -46,7 +40,6 @@ function setMap(data) {
 }
 
 async function searchIp(event) {
-    event.preventDefault();
     const data = await getAddress(ipInput.value);
     setData(data)
     setMap(data)
