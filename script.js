@@ -39,8 +39,10 @@ function setMap(data) {
     marker = L.marker([data.location.lat, data.location.lng], { icon: markerIcon }).addTo(map);
 }
 
-async function searchIp(event) {
+async function searchIp() {
     const data = await getAddress(ipInput.value);
     setData(data)
     setMap(data)
 }
+
+window.onload(searchIp())
